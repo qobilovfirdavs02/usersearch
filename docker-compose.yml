@@ -18,7 +18,8 @@ services:
   # Backend service (FastAPI)
   backend:
     build:
-      context: ./backend  # Backend manzili
+      context: ./backend 
+      dockerfile: Dockerfile # Backend manzili
     container_name: backend
     restart: always
     ports:
@@ -31,7 +32,8 @@ services:
   # Frontend service (Next.js)
   frontend:
     build:
-      context: ./frontend  # Frontend manzili
+      context: ./frontend
+      dockerfile: Dockerfile  # Frontend manzili
     container_name: frontend
     restart: always
     ports:
