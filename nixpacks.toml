@@ -1,0 +1,12 @@
+[builds]
+# FastAPI uchun build pack
+[[builds.deploy]]
+name = "backend"
+path = "backend"
+buildpack = "python"
+
+# Next.js uchun build pack
+[[builds.deploy]]
+name = "frontend"
+path = "frontend"
+buildpack = "nodejs"
