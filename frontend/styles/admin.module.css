@@ -1,0 +1,83 @@
+.adminContainer {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #d8d5d5;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.adminTitle {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.adminInput {
+  width: 94%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.fileInput {
+  width: 95%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  background: #f8bb76;
+  cursor: pointer;
+}
+
+.fileInput:hover {
+  background: #9ff69f;
+}
+
+.adminButton {
+  width: 98%;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.adminButton:hover {
+  background: #00b324;
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputField {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.saveButton {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.userPhoto {
+  width: 50px; /* Suratning kengligi */
+  height: 50px; /* Suratning balandligi */
+  object-fit: cover; /* Suratni joyiga sig‘dirish */
+  border-radius: 10%; /* Dumaloq avatar qilish */
+  margin-right: 10px; /* Matndan ajratish */
+}

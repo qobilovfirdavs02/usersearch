@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+sqlalchemy
+psycopg2
+pydantic
+passlib
+python-jose
+pymysql
+Pillow
+python-multipart

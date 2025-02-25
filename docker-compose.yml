@@ -1,0 +1,46 @@
+version: "3.8"
+
+services:
+  # PostgreSQL database (PostgreSQL 15)
+  db:
+    image: postgres:15  # PostgreSQL 15.x rasmiga o'tish
+    container_name: postgres_cont
+    restart: always
+    environment:
+      POSTGRES_DB: persons       # Baza nomi
+      POSTGRES_USER: user          # Foydalanuvchi no
+      POSTGRES_PASSWORD: password  # Foydalanuvchi paroli
+    ports:
+      - "5432:5432"  # PostgreSQL porti
+    volumes:
+      - postgres_data:/var/lib/postgresql/data 
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql # Ma'lumotlar saqlanishi
+
+  # Backend service (FastAPI)
+  backend:
+    build:
+      context: ./backend 
+      dockerfile: Dockerfile # Backend manzili
+    container_name: backend
+    restart: always
+    ports:
+      - "8000:8000"  # Backend porti
+    environment:
+      - DATABASE_URL=postgresql://user:password@db:5432/persons  # PostgreSQL database URL
+    depends_on:
+      - db  # Baza tayyor bo'lishini kutadi
+
+  # Frontend service (Next.js)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile  # Frontend manzili
+    container_name: frontend
+    restart: always
+    ports:
+      - "3000:3000"  # Frontend porti
+    depends_on:
+      - backend  # Backend tayyor bo'lishini kutadi
+
+volumes:
+  postgres_data:  # PostgreSQL ma'lumotlarini saqlash uchun volume
